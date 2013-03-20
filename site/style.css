@@ -58,11 +58,11 @@ h1, h2, h3, h4, b {
 	background: #5b4d3d;
 	box-shadow: 0 1px 2px rgba(0,0,0,.25);
 }
-	.banner ul {
+	.banner ul, .banner .slideshow {
 		list-style: none;
 		width: 300%;
 	}
-	.banner ul li {
+	.banner ul li, .banner .slide {
 		display: block;
 		float: left;
 		width: 33%;
