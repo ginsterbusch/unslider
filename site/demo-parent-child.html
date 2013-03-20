@@ -71,7 +71,7 @@
 		</div>
 		
 		<div id="howto" class="how wrap">
-			<h2>How to use Unslider</h2>
+			<h2>How to use Unslider with a custom parent-child structure</h2>
 			
 			<ol>
 				<li>
@@ -88,16 +88,16 @@
 				<li>
 					<div>
 						<h3>Ready your HTML</h3>
-						<p>Unslider doesn’t need any really awkward markup. In fact, all you need is a <code>div</code> and an unordered list. An example of some Unslider-friendly HTML is on the right.</p>
+						<p>Unslider doesn’t need any really awkward markup. In fact, all you need is a <code>div</code> and some kind of parent-child structure. An example of some Unslider-friendly HTML is on the right. In this case, the parent element is <code>.slideshow</code>, and the child element is <code>.slide</code>.</p>
 						<p>You can add as many slides as you want: the example on the right just has three for the sake of brevity, but Unslider won’t work properly with one slide (but then it’s just a box).</p>
 					</div>
 					
 					<pre>&lt;div class=&quot;banner&quot;&gt;
-    &lt;ul&gt;
-        &lt;li&gt;This is a slide.&lt;/li&gt;
-        &lt;li&gt;This is another slide.&lt;/li&gt;
-        &lt;li&gt;This is a final slide.&lt;/li&gt;
-    &lt;/ul&gt;
+    &lt;div class=&quot;slideshow&quot;&gt;
+        &lt;div class=&quot;slide&quot;&gt;This is a slide.&lt;/div&gt;
+        &lt;div class=&quot;slide&quot;&gt;This is another slide.&lt;/div&gt;
+        &lt;div class=&quot;slide&quot;&gt;This is a final slide.&lt;/div&gt;
+    &lt;/div&gt;
 &lt;/div&gt;</pre>
 				</li>
 				
@@ -136,7 +136,9 @@
 	complete: function() {},  <span>//  A function that gets called after every slide animation</span>
 	keys: true,               <span>//  Enable keyboard (left, right) arrow shortcuts</span>
 	dots: true,               <span>//  Display dot navigation</span>
-	fluid: false              <span>//  Support responsive design. May break non-responsive designs</span>
+	fluid: false,             <span>//  Support responsive design. May break non-responsive designs</span>
+	parent: 'ul',             <span>//  Optional. Change the parent element into something different than an unordered list.</span>
+	child: 'li',              <span>//  Optional. Change the parent element into something different than an unordered list.</span>
 });</pre>
 <br><br><br>
 				<h2 id="touch">Touch support</h2>
@@ -223,8 +225,7 @@ data.dots();</pre>
 				return false;
 			});
 			
-			var GoSquared = {acct: 'GSN-396664-U'};
+			
 		</script>
-		<script src="//d1l6p2sc9645hc.cloudfront.net/tracker.js"></script>
 	</body>
 </html>

@@ -136,7 +136,9 @@
 	complete: function() {},  <span>//  A function that gets called after every slide animation</span>
 	keys: true,               <span>//  Enable keyboard (left, right) arrow shortcuts</span>
 	dots: true,               <span>//  Display dot navigation</span>
-	fluid: false              <span>//  Support responsive design. May break non-responsive designs</span>
+	fluid: false,             <span>//  Support responsive design. May break non-responsive designs</span>
+	parent: 'ul',             <span>//  Optional. Change the parent element into something different than an unordered list.</span>
+	child: 'li',              <span>//  Optional. Change the parent element into something different than an unordered list.</span>
 });</pre>
 <br><br><br>
 				<h2 id="touch">Touch support</h2>
@@ -220,8 +222,6 @@ data.dots();</pre>
 				return false;
 			});
 			
-			var GoSquared = {acct: 'GSN-396664-U'};
 		</script>
-		<script src="//d1l6p2sc9645hc.cloudfront.net/tracker.js"></script>
 	</body>
 </html>
