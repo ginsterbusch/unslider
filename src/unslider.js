@@ -25,6 +25,8 @@
 		this.opts = {
 			speed: 500,
 			delay: 3000, // f for no autoplay
+			parent_element: 'ul', // option to use a different parent-child construct (instead of ul => li)
+			child_element: 'li', // same here
 			complete: f, // when a slide's finished
 			keys: !f, // keyboard shortcuts - disable if it breaks things
 			dots: f, // display ••••o• pagination
@@ -36,9 +38,10 @@
 
 		this.init = function(el, opts) {
 			this.el = el;
-			this.ul = el.children('ul');
-			this.max = [el.outerWidth(), el.outerHeight()];			
-			this.items = this.ul.children('li').each(this.calculate);
+			this.ul = el.children( opts.parent_element ); // enhance the parent element
+			this.max = [el.outerWidth(), el.outerHeight()];	
+			//this.items = this.ul.children('li').each(this.calculate);
+			this.items = this.ul.children( opts.child_element ).each(this.calculate); // enhance the child element
 			
 			//  Check whether we're passing any options in to Unslider
 			this.opts = $.extend(this.opts, opts);
